@@ -1,0 +1,269 @@
+<html>
+    <head><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <!-- Copyright 2017 popoway. All rights reserved. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#6386EC">
+    <link rel="shortcut icon" href="favicon.png?__inline=true" />
+    <link rel="apple-touch-icon" sizes="192x192" href="touchicon.png?__inline=true">
+    <!-- Initialize all necessary scripts. -->
+    <script src="sha.js"></script><script src="totp.js"></script></script><script src="clipboard.min.js"></script><script src="list.js"></script>
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 1em;
+    }
+    input{
+	    height:60px;
+	    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif, fixed-width;
+	    font-size:30pt;
+    }
+    button{
+	height:60px;
+	width:60px;
+	border: none;
+	background-color: #e7e7e7;
+	color: black;
+    }
+    a:link, a:visited {
+        color: #000000;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+        }
+        div {
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+        }
+    }
+    table, th, td {
+	border: none;
+	border-collapse: collapse;
+    }
+    .centeralign {
+	text-align: center;
+    } 
+    .otptablecaption {
+	text-align: middle; 
+	font-weight: normal;
+    } 
+    .otptableleft {
+	text-align: right; 
+    } 
+    .otptableright {
+	text-align: left; 
+    } 
+    </style>
+  <title>One-Time Password Generator</title>
+<!-- Simple Automatic Refresh -->
+  <meta http-equiv="REFRESH" content="8" />
+    </head>
+    <body>
+    <script type="text/javascript">
+	    //Instantiate Clipboard module
+	    var btn = document.getElementById('btn');
+	    var clipboard = new Clipboard('.btn');
+	    //clipboard.destroy(); Deprecated because of new algorithm
+	    //F12 for debug in console 
+	    clipboard.on('success', function(e) {
+	        console.log(e);
+	    });
+	    clipboard.on('error', function(e) {
+	        console.log(e);
+	    });
+    </script>
+    <div class="centeralign">
+	<h1>One-Time Password Generator</h1></br>
+	<!-- otp display part starts -->
+	<table style="width:100%;">
+	  <col width=60%>
+	  <col width=40%>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		popowayCloud:&nbsp;popoway
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="popowayCloud" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#popowayCloud"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Google:&nbsp;exampleperson@gmail.com
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Google" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Google"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Microsoft:&nbsp;exampleperson@msn.com
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Microsoft" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Microsoft"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Facebook:&nbsp;exampleperson@msn.com
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Facebook" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Facebook"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Xiaomi:&nbsp;exampleperson58127
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Xiaomi" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Xiaomi"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Evernote:&nbsp;exampleperson@msn.com
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Evernote" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Evernote"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Amazon:&nbsp;exampleperson@msn.com*
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Amazon" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Amazon"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		GoDaddy:&nbsp;exampleperson152
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="GoDaddy" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#GoDaddy"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Cloudflare:&nbsp;popoway
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Cloudflare" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Cloudflare"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Wishosting:&nbsp;popoway
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Wishosting" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Wishosting"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	  <tr>
+	    <!-- Caption -->
+	    <th colspan="2" class="otptablecaption">
+		Vultr:&nbsp;exampleperson@msn.com
+	    </th>
+	  </tr>
+	  <tr>
+	    <th class="otptableleft">
+		<!-- Target --><input id="Vultr" size="6" value="otp value will appear here." readonly></input>
+	    </th>
+	    <th class="otptableright">
+		<!-- Trigger --><button class="btn" data-clipboard-target="#Vultr"><img src="clippy.svg" height="45" width="45" alt="Copy to clipboard"></button>
+	    </th>
+	  </tr>
+	</table>
+	<!-- otp display part ends -->
+	<p>Current client time: <script>document.write(currsertime);</script></br>*This item currently does't work due to algorithm issues. We'll get it fixed in next version.</p>
+    </div>
+    <div class="centeralign">© 2017 popowayCloud. Do not distribute!</div>
+    <script type="text/javascript">
+	//Modification of elements starts
+	document.getElementById("popowayCloud").value = popowayCloud;
+	document.getElementById("Google").value = Google;
+	document.getElementById("Microsoft").value = Microsoft;
+	document.getElementById("Facebook").value = Facebook;
+	document.getElementById("Xiaomi").value = Xiaomi;
+	document.getElementById("Evernote").value = Evernote;
+	document.getElementById("Amazon").value = Amazon;
+	document.getElementById("GoDaddy").value = GoDaddy;
+	document.getElementById("Cloudflare").value = Cloudflare;
+	document.getElementById("Wishosting").value = Wishosting;
+	document.getElementById("Vultr").value = Vultr;
+	//Modification of elements ends
+    </script>
+    </body>
+</html>

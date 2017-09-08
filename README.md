@@ -14,4 +14,4 @@ Download the latest distribution in release page.
 
 # License
 
-[MIT](https://github.com/popoway/otp-dialog/blob/master/LICENSE.txt)
+[MIT](https://github.com/popoway/otp-dialog/blob/master/LICENSE)
